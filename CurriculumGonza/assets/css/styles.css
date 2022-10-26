@@ -1,0 +1,49 @@
+@media (max-width:900px){
+    .nav-Link:hover{
+        display:none
+    }
+}
+
+
+.suave{
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+
+.ex1 {
+
+    max-height: 200px;
+}
+
+.mar{
+    margin: 2px;
+}
+
+.xborde{
+    background-color: red;
+}
+.ybo{
+    background-color: blue;
+}
+.xbo{
+    background-color: green;
+}
+
+body{
+    overflow-x: hidden;
+}
+div.ex3 {
+    overflow: auto;
+    max-height: 980px;
+}
+.ex4{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.linkeados{
+    color:red;
+    text-decoration:none
+}
