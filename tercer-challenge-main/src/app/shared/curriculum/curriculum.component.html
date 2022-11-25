@@ -1,0 +1,66 @@
+<div class="canvas border">
+    <div class="header row">
+        <div class="logo col-4 mt-2">
+            <img class="logo_img img-fluid" src="assets/img/logo_light_background.png" alt="logo">
+        </div>
+        <div class="vertica_divider col-1 p-0"></div>
+        <div class="col-7 text-center mt-2">
+            <h1 class="titulo  mb-0">{{nombre}}</h1>
+            <h2 style="font-size: 16px mt-0">{{profesion_rol}}</h2>
+        </div>
+    </div>
+
+    <div class="introduce text-center">
+        <p style="font-size: 10px">{{Presentacion}}</p>
+    </div>
+
+    <div class="container row">
+        <div class="left_side col-4 px-16">
+            <div class="skills">
+                <h2>
+                    <u>Habilidades Técnicas</u>
+                </h2>
+                <ul *ngFor="let element of habilidades">
+                    <li class="habilidades_tecnicas" style="font-size: 10px">{{element.HabilidadTecnica}} {{element.NivelConocimiento}}</li>
+                </ul>
+            </div>
+
+            <div class="strengths">
+                <h2>
+                    <u>Fortalezas y Áreas de Interes</u>
+                </h2>
+                <ul *ngFor="let element of idioma">
+                    <li class="strengths_element" style="font-size: 10px">{{element.Idioma}} {{element.NivelIdioma}}</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="right_side col-8">
+            <div class="professional">
+                <h2 class="mb-0">Experiencia Profesional</h2>
+                <div class="line"></div>
+                <div class="pt-3" *ngFor="let dato of experiencia">
+                    <h3 class="mb-0" style="font-size: 12px">{{dato.Empresa}} / {{dato.Rol}}</h3>
+                    <h4 class="mb-0 fw-bold rol"><i>Rol desempeñado</i></h4>
+                    <ul>
+                        <li style="font-size: 9px">
+                            {{dato.DescripcionFunciones}}
+                        </li>
+                    </ul>
+                    <p class="mb-0" style="font-size: 10px">{{dato.FechaDesde}} - {{dato.FechaFin}}</p>
+                </div>
+            </div>
+            <div class="academic">
+                <h2 class="mb-0">Formación Académica</h2>
+                <div class="line"></div>
+                <ul class="pt-3" *ngFor="let element of formacion">
+                    <li style="font-size: 9px">{{element.Anio}} - {{element.Carrera}}, {{element.UniversidadInstitucion}}</li>
+                </ul>
+            </div>
+            <div class="col btns d-flex justify-content-end">
+                <button class="print py-2 px-3 rounded-1 border-0  border-primary bg-primary mr-5">Descargar</button>
+                <button class="cerrar py-2 px-3 rounded-1 border-1 border-primary text-primary">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

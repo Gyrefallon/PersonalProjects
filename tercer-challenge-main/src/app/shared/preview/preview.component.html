@@ -1,0 +1,11 @@
+<div class="preview-modal" *ngIf="isVisible()" >
+    <div class="preview-card">
+        <div id="preview">
+            <app-curriculum></app-curriculum>
+        </div>
+        <div class="buttons">
+            <button class="print py-2 px-3 rounded-1 border-0  border-primary bg-primary mr-5" (click)="downloadPDF()">Descargar</button>
+            <button class="cerrar py-2 px-3 rounded-1 border-1 border-primary text-primary" (click)="close()">Cerrar</button>
+        </div>
+    </div>
+</div>

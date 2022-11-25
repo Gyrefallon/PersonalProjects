@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand">
+  <!-- Navbar Brand-->
+  <img src="/assets/img/logo socius.png" class="ms-3 my-1" />
+</nav>
+<div class="body2">
+  <div class="container col-8">
+    <div class="row">
+      <h1><b>¡Hola! Te damos la bienvenida al sistema ISI5</b></h1>
+    </div>
+    <div class="row">
+      <div class="col-4 mt-1">
+        <p>Ingresa con tus credenciales</p>
+      </div>
+      <div class="col-5">
+        <form>
+          <div class="mb-5">
+            <span class="p-float-label">
+              <input
+                id="correo"
+                type="text"
+                style="font-family: Arial"
+                class="form-control"
+                pInputText
+                formControlName="email"
+              />
+              <label for="correo"
+                ><i class="pi pi-user"></i> Correo electrónico empresa</label
+              >
+            </span>
+          </div>
+
+          <div class="my-3">
+            <span class="p-float-label">
+              <input
+                id="clave"
+                type="password"
+                class="form-control"
+                style="font-family: Arial"
+                aria-label="Sizing example input"
+                aria-describedby="pass"
+                pInputText
+                formControlName="password"
+              />
+              <label for="clave"><i class="pi pi-key"></i> Contraseña</label>
+            </span>
+            <div id="pass" class="form-text">
+              <i class="fa-regular fa-circle-question"></i> Mínimo 8 caracteres,
+              una mayúscula y un número.
+            </div>
+          </div>
+
+          <div class="alert alert-primary" role="alert">
+            <div class="row">
+              <div class="col-1">
+                <i class="fa-solid fa-circle-info body"></i>
+              </div>
+              <div class="col">
+                Si no tienes una cuenta, contáctanos a
+                <u>contacto@sociuschile.cl</u> indicando nombre, correo
+                corporativo y rol.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-flow: row;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <a href="./reestablecer-password" style="float: left"
+              >Reestablecer contraseña</a
+            >
+            <button
+              routerLink="/c/dashboard"
+              style="float: right; width: 120px"
+              class="btn btn-light"
+            >
+              Ingresar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

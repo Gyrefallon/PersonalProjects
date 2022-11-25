@@ -1,0 +1,151 @@
+<p-table #dt [value]="candidatosStr" [(selection)]="selectedpostulantes" dataKey="RUN" [rowHover]="true"
+    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
+    [paginator]="true" currentPageReportTemplate="Mostrando {first} de {last} de un total de {totalRecords} entradas"
+    [filterDelay]="0" [globalFilterFields]="['Nombre','RUN','Habilidad']">
+    <ng-template pTemplate="caption">
+        <div class="table-header">
+            Lista de Postulantes
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')" placeholder="Busqueda Global"/>
+            </span>
+            <button pButton pRipple type="button" routerLink="/c/form" label="" class="p-button-raised izquierda">Agregar Nueva Ficha<img src={{iconoAgregar}} style="scale: 1;" class="mb-1 boton_add"></button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+
+      <tr>
+          <!-- <th>
+              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th> -->
+            <th pSortableColumn="Nombre" style="min-width: 14rem">
+                <div class="flex justify-content-between align-items-center">
+                  Nombre
+                    <p-sortIcon field="Nombre"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="RUN"style="min-width: 14rem">
+                <div class="flex justify-content-between align-items-center">
+                    RUN
+                    <p-sortIcon field="RUN"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="Perfil"style="min-width: 14rem">
+              <div class="flex justify-content-between align-items-center">
+                  Perfil
+                  <p-sortIcon field="Perfil"></p-sortIcon>
+              </div>
+          </th>
+            <th pSortableColumn="DescripcionPerfil" style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                    Descripcion Perfil
+                    <p-sortIcon field="DescripcionPerfil"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="FechaIngreso" style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                    Fecha Ingreso
+                    <p-sortIcon field="FechaIngreso"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="PaisResidencia" style="min-width: 10rem">
+              <div class="flex justify-content-between align-items-center">
+                Pais Residencia
+                  <p-sortIcon field="PaisResidencia"></p-sortIcon>
+              </div>
+            </th>
+            <th pSortableColumn="Fuente" style="min-width: 10rem">
+              <div class="flex justify-content-between align-items-center">
+                Fuente
+                  <p-sortIcon field="Fuente"></p-sortIcon>
+              </div>
+            </th>
+            <th pSortableColumn="Experiencia" style="min-width: 10rem">
+              <div class="flex justify-content-between align-items-center">
+                Experiencia
+                  <p-sortIcon field="Experiencia"></p-sortIcon>
+              </div>
+            </th>
+            <th pSortableColumn="Formacion" style="min-width: 10rem">
+              <div class="flex justify-content-between align-items-center">
+                Formacion
+                  <p-sortIcon field="Formacion"></p-sortIcon>
+              </div>
+            </th>
+            <th pSortableColumn="Habilidad" style="min-width: 10rem">
+              <div class="flex justify-content-between align-items-center">
+                Habilidad
+                  <p-sortIcon field="Habilidad"></p-sortIcon>
+              </div>
+            </th>
+            <th pSortableColumn="Idioma" style="min-width: 10rem">
+              <div class="flex justify-content-between align-items-center">
+                Idioma
+                  <p-sortIcon field="Idioma"></p-sortIcon>
+              </div>
+            </th>
+            <th style="width: 5rem"></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-candidatosStr>
+        <tr class="p-selectable-row">
+            <!-- <td>
+                <p-tableCheckbox [value]="postulantes"></p-tableCheckbox>
+            </td> -->
+            <td >
+                <span class="p-column-title">Nombre</span>
+                {{candidatosStr.Nombre}}
+            </td>
+            <td >
+              <span class="p-column-title">RUN</span>
+              {{candidatosStr.RUN}}
+            </td>
+            <td >
+              <span class="p-column-title">Perfil</span>
+              {{candidatosStr.Perfil}}
+            </td>
+            <td >
+              <span class="p-column-title">DescripcionPerfil</span>
+              {{candidatosStr.DescripcionPerfil}}
+            </td>
+            <td >
+              <span class="p-column-title">FechaIngreso</span>
+              {{candidatosStr.FechaIngreso}}
+            </td>
+            <td >
+              <span class="p-column-title">PaisResidencia</span>
+              {{candidatosStr.PaisResidencia}}
+            </td>
+            <td >
+              <span class="p-column-title">Fuente</span>
+              {{candidatosStr.Fuente}}
+            </td>
+            <td >
+              <span class="p-column-title">Experiencia</span>
+              <span *ngFor="let forma of candidatosStr.Experiencia">{{ forma.Empresa }}</span>
+
+            </td>
+            <td >
+              <span class="p-column-title">Formacion</span>
+              <span *ngFor="let forma of candidatosStr.Formacion">{{ forma.Carrera }}</span>
+            </td>
+            <td >
+              <span class="p-column-title">Habilidad</span>
+              {{ candidatosStr.Habilidad}}
+            </td>
+            <td >
+              <span class="p-column-title">Idioma</span>
+              <span *ngFor="let idioma of candidatosStr.Idioma">{{ idioma.Idioma }}</span>
+            </td>
+            <td style="text-align: center">
+                <button pButton type="button" (click)="openModal()" class="p-button-secondary" icon="pi pi-cog"></button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="15">No se encuentran Postulantes.</td>
+        </tr>
+    </ng-template>
+</p-table>
+

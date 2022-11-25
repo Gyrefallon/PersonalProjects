@@ -1,0 +1,99 @@
+* {
+    color: #445569;   
+    font: "roboto"; 
+}
+
+.canvas {
+    border: .1em solid red;
+    position: relative;
+    width: 612px;
+    height: 700px;
+
+}
+
+.titulo {  
+    /* font-family: 'Montserrat'; */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+    color: #4475C1;
+}
+
+.left_side {
+    background-color: #EEF4FD;
+}
+
+.logo_img {
+    width: 179.8px;
+    height: 37.54px;
+    padding-right: 9.2px;
+    padding-left: 21px;
+}
+
+.line {
+    border-top: 1px solid #445569;
+    width: 100%;
+    background-color: #445569;
+}
+
+.vertica_divider {
+    height: 85px;
+    width: 1px;
+    border-left: 1px solid #000000;
+}
+
+h2 {
+    width: 157px;
+    height: 17px;
+    left: 37px;
+    top: 200px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    
+    letter-spacing: 0.02em;
+}
+
+.rol {
+    font-size: 10px;
+    background-color: #EEF4FD;
+}
+
+.cerrar {
+    background-color: #EFF6FF;
+}
+
+.habilidades_tecnicas {
+    width: 157px;
+    height: 226px;
+    left: 37px;
+    top: 234px;
+    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 20px;
+    /* or 200% */
+    
+    letter-spacing: 0.03em;
+}
+
+.strengths_element {
+    width: 157px;
+    height: 226px;
+    left: 37px;
+    top: 522px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    /* or 120% */
+
+    letter-spacing: 0.02em;
+}

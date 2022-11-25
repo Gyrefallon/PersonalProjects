@@ -1,0 +1,53 @@
+<div class="topbar">
+  <div style="align-items: center; display:flex;">
+    <a id="omega-menu-button" href="#" (click)="appDefault.toggleMenu($event)">  <!--(click)="toggleMenu($event)"-->
+      <span class="pi pi-bars"></span>
+    </a>
+    <img class="ml-3" [src]="'/assets/img/logo socius.png'" alt="12" width="113">
+  </div>
+  <!-- <div class="visualizacion">
+    <p class="text-white texto-topbar">Visualización:</p>
+    <p-dropdown [options]="practicas" [(ngModel)]="practicaGlobal" [disabled]="disabled"  optionLabel="nombre_practica" optionValue="id_practica"   [style]="{'min-width': '270px'}" (onChange)="onChangePractica()"></p-dropdown>
+  </div> -->
+
+  <a id="options-menu-button" href="#" > <!--(click)="appMain.toggleTopMenu($event)"-->
+    <span class="pi pi-ellipsis-h"></span>
+  </a>  
+  
+  <div id="topbar-icons" >
+    <span>
+      <img src="/assets/img/campana.svg" class="ms-5">
+    </span>
+    
+    <div class="subnav">
+      <p class=" ml-3" (click)="appDefault.toggleDropdownMenu($event)">{{username}}</p>
+      <div style="display: none;" [ngClass]="{'subnav-content-active': appDefault.dropdownActive}">
+        <ul>
+          <li> <p>Mi Cuenta</p></li>
+          <li> <p>Cambiar Contraseña</p></li>
+          <li> <p>Configuración</p></li>
+          <li> <p > <i class="pi pi-fw pi-power-off"></i> Cerrar Sesión</p></li>
+        </ul>
+      </div>
+    </div>
+    
+    
+  </div>
+  
+</div>
+
+<!-- <nav class="navbar navbar-expand">
+
+    <img src="/assets/img/logo socius.png" class="ms-3 my-1">
+    <div class="col-5"></div>
+    <p class="text-white ms-auto me-3 mt-2 texto-topbar">Visualización:</p>
+    
+    <p-dropdown [options]="practicas" [(ngModel)]="practicaGlobal" [disabled]="disabled"  optionLabel="nombre_practica" optionValue="id_practica"   [style]="{'min-width': '270px'}" (onChange)="onChangePractica()"></p-dropdown>
+      <img src="/assets/img/campana.svg" class="ms-5">
+    
+    <p #nombre style="float: right;" class="text-light ms-5 me-3 mt-2 username texto-topbar " (click)="menu.toggle($event)">{{username}}</p>
+    <p-slideMenu #menu [model]="items" effectDuration="1000" easing="ease-in" [popup]="true" [viewportHeight]="250" [style]="{'margin-top':'40px'}" [appendTo]="nombre"></p-slideMenu>
+
+
+    
+</nav> -->

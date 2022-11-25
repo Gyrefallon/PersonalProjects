@@ -1,0 +1,137 @@
+.formulario{
+  position: absolute;
+  width: 1000px;
+  left: 294px;
+  top: 95px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+.subtitulo{
+width: 236px;
+height: 24px;
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+color: #757575;
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.boton1{
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px 12px;
+gap: 8px;
+
+width: 104px;
+height: 36px;
+left: 750px; /* menos de 1158 */
+top: 1250px;
+background: #EFF6FF;
+border: 1px solid #3B82F6;
+border-radius: 4px;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+color: #3B82F6;
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.boton2{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px 12px;
+gap: 8px;
+position: absolute;
+width: 78px;
+height: 36px;
+left: 900px; /* menos de 1158 */
+top: 1250px;
+background: #1D4ED8;
+border-radius: 4px;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+color: #FFFFFF;
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.boton3{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+isolation: isolate;
+position: absolute;
+width: 44px;
+height: 44px;
+background: #DFF7FE;
+border-radius: 6px;
+color:black;
+border-color: transparent;
+}
+.exp{
+position: absolute;
+width: 170px;
+height: 20px;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #000000;
+}
+.boton4{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  isolation: isolate;
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  background: #DFF7FE;
+  border-radius: 6px;
+  color:black;
+  border-color: transparent;
+}
+.exp2{
+position: absolute;
+width: 170px;
+height: 20px;
+left: 770px;
+top: 700px;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #000000;
+}
+
+.botonExp{
+  float: right;
+  bottom: 0;
+
+}
+
+.botonfinal{
+  float: right;
+  bottom: 0;
+  border-radius: 4px;
+
+
+}
+.botonvista {
+  border-right: 1px;
+}

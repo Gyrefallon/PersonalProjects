@@ -1,0 +1,38 @@
+<div class="sidebar border-end" id="">
+  <div class="sidebar-scroll-content">
+    <div class="abajo"></div>
+
+      <div class="menu">
+          <ul class="layout-menu">
+              <li><a class="list-group-item list-group-item-action  p-3 border-0 texto-socius animate__animated animate__fadeInLeft animacion-1 "
+                      routerLink="dashboard" routerLinkActive="negrita" (isActiveChange)="cambiarColorInicio($event)">
+                      <div class="d-flex"><span class="mt-1"><img src={{iconoInicio}} style="scale: 0.7;" class="mb-1">
+                              Inicio</span></div>
+                  </a>
+                  <a class="list-group-item list-group-item-action  p-3 border-0 texto-socius animate__animated animate__fadeInLeft animacion-1 "
+                      routerLinkActive="negrita" (isActiveChange)="cambiarColorInicio($event)">
+                      <div class="d-flex"><span class="mt-1"><img src={{iconoUsuario}} style="scale: 0.7;" class="mb-1">
+                        Colaboradores</span></div>
+                  </a>
+                  <a class="list-group-item list-group-item-action  p-3 border-0 texto-socius animate__animated animate__fadeInLeft animacion-1 "
+                      routerLink="form" routerLinkActive="negrita" (isActiveChange)="cambiarColorInicio($event)">
+                      <div class="d-flex"><span class="mt-1"><img src={{iconoFicha}} style="scale: 0.7;" class="mb-1">
+                        Ficha Técnica</span></div>
+                  </a>
+              </li>
+
+          </ul>
+
+      </div>
+    <!-- <div class="menu" >
+          <div class="visualizacion">
+              <h3 class="pl-3" style="color: #797777; font-weight: 400;">Visualización:</h3>
+              <div class="dropdown" >
+                  <p-dropdown class=""  [options]="practicas" [filter]="countPracticas" [(ngModel)]="practicaGlobal" [disabled]="disabled"  optionLabel="nombre_practica" optionValue="id_practica"   [style]="{'width': '230px'}" (onChange)="onChangePractica()"></p-dropdown>
+              </div>
+
+          </div>
+      </div>-->
+
+  </div>
+</div>

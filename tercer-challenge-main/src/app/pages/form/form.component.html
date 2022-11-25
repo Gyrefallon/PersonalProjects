@@ -1,0 +1,207 @@
+<div class="p-fluid p-grid container-fluid formulario">
+  <form action="" [formGroup]="formularioPostulante" (submit)="enviarForm()">
+    <h2>Ingreso nuevo Curriculum</h2>
+    <div class="row">
+      <div class="p-field p-col-4 p-md-4 col-md-4">
+        <span class="p-float-label">
+        <input class="form-control" list="browsers" name="browser" id="browser" formControlName="detalleFuente">
+      <label for="cascadeSelect">Fuente</label>
+      <datalist id="browsers">
+        <option value="Edge">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+      </span>
+      </div>
+      <div class="p-field p-col-4 p-md-4 col-md-4">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText formControlName="detallFuente"/>
+          <label for="inputtext">Detalle Fuente</label>
+        </span>
+      </div>
+      <div class="p-field p-col-4 p-md-4 col-md-4">
+          <span class="p-float-label">
+          <input class="form-control" list="browsers" name="browser" id="browser" formControlName="detalleFuente">
+        <label for="cascadeSelect">Pais de Residencia</label>
+        <datalist id="browsers">
+          <option value="Edge">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+        </span>
+      </div>
+    </div>
+    <h3>Datos personales</h3>
+    <div class="row">
+      <div class="p-field p-col-12 p-md-4 col-md-9">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText formControlName="Nombre"/>
+          <label for="inputtext">Nombre Completo</label>
+        </span>
+        <p class="subtitulo"><img src="{{iconoInter}}">Nombres primero después apellidos</p>
+      </div>
+      <div class="p-field p-col-12 p-md-4 col-md-3">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText formControlName="RUN"/>
+          <label for="inputtext">DNI/RUT/CI</label>
+        </span>
+        <p class="subtitulo"><img src="{{iconoInter}}">Sin puntos y con guión</p>
+      </div>
+      <div class="p-field p-col-12 p-md-4 col-md-4">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText formControlName="Perfil"/>
+          <label for="inputtext">Perfil</label>
+        </span>
+      </div>
+      <div class="p-field p-col-12 p-md-4 col-md-8">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText formControlName="DescripcionPerfil"/>
+          <label for="inputtext">Descripcion General del Perfil</label>
+        </span>
+      </div>
+    </div>
+    <!--Experiencia-->
+    <ng-container class="row" formArrayName="Experecia">
+      <div>
+        <h4>Experiencia Profesional</h4>
+        <h6 class="exp">Agregar experiencia</h6> <button type="button"  class="botonExp btn btn-primary " (click)="newexperiencia()">+</button>
+
+      </div>
+      <div *ngFor="let exp of ExpereciaProf.controls;let i = index" class="row">
+        <div [formGroupName]="i">
+        <div class="p-field p-col-12 p-md-4 col-md-8">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText formControlName="Empresa"/>
+          <label for="inputtext" >Empresa/Proyecto</label>
+        </span>
+      </div>
+      <div class="p-field p-col-12 p-md-4 col-md-2">
+        <span class="p-float-label">
+          <p-calendar inputId="calendar" formControlName="FechaDesde"></p-calendar>
+          <label for="calendar">Desde</label>
+        </span>
+      </div>
+      <div class="p-field p-col-12 p-md-4 col-md-2">
+        <span class="p-float-label">
+          <p-calendar inputId="calendar" formControlName="FechaFin"></p-calendar>
+          <label for="calendar">Hasta</label>
+        </span>
+      </div>
+      <div class="p-field p-col-12 p-md-4 col-md-4">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText formControlName="Rol"/>
+          <label for="inputtext">Rol</label>
+        </span>
+      </div>
+      <div class="p-field p-col-12 p-md-4 col-md-8">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText formControlName="DescripcionFunciones"/>
+          <label for="inputtext">Descripción de Funciones</label>
+        </span>
+        <p class="subtitulo"><img src="{{iconoInter}}">Máximo 500 caracteres</p>
+      </div>
+    </div>
+    </div>
+    </ng-container>
+
+    <!--Formacion-->
+    <h4>Formación</h4>
+    <ng-container class="row" formArrayName="Formacion"> <button type="button" class="botonExp btn btn-primary " (click)="newformacion()">+</button>
+
+      <div *ngFor="let exp of FormacionProf.controls;let e = index" class="row">
+      <h6>Formación Academica</h6>
+      <div [formGroupName]="e">
+      <div class="p-field p-col-12 p-md-4 col-md-8">
+        <span class="p-float-label">
+          <input type="text" id="inputtext" pInputText formControlName="Carrera"/>
+          <label for="inputtext">Carrera/Certificacion/Curso</label>
+        </span>
+      </div>
+      <div class="p-field p-col-12 p-md-4 col-md-4">
+        <span class="p-float-label">
+          <p-inputMask inputId="inputmask" mask="9999" formControlName="Anio"></p-inputMask>
+          <label for="inputmask">Año de realización o de finalización</label>
+      </span>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <span class="p-float-label">
+          <input class="form-control" list="browsers" name="browser" id="browser" formControlName="detalleFuente">
+        <label for="cascadeSelect">Universidad o Institucion</label>
+        <datalist id="browsers">
+          <option value="Edge">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+        </span>
+      </div>
+    </div>
+    </div>
+    </ng-container>
+
+    <!--Habilidades-->
+    <h4>Habilidades</h4>
+    <ng-container class="row" formArrayName="Habilidad">
+    <h5>Habilidades Técnicas</h5>
+    <button type="button" class="botonExp btn btn-primary" (click)="newhabilidad()">+</button>
+    <div *ngFor="let exp of HabilidadProfesional.controls;let x = index" class="row">
+    <div class="p-field p-col-12 p-md-4 col-md-8">
+      <span class="p-float-label">
+        <input type="text" id="inputtext" pInputText formControlName="HabilidadTecnica"/>
+        <label for="inputtext">Habilidad Técnica {{x+1}}</label>
+      </span>
+    </div>
+    <div class="p-field p-col-12 p-md-4 col-md-4">
+      <span class="p-float-label">
+        <input class="form-control" list="browsers" name="browser" id="browser" formControlName="detalleFuente">
+      <label for="cascadeSelect">Nivel Conocimiento</label>
+      <datalist id="browsers">
+        <option value="Edge">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+      </span>
+    </div>
+  </div>
+    </ng-container>
+
+    <!--Idiomas-->
+    <h5>Idiomas</h5>
+    <ng-container class="row" formArrayName="Idioma">
+        <h5></h5>
+        <button type="button" class="btn btn-primary botonExp" (click)="newidioma()">+</button>
+        <div *ngFor="let exp of IdiomaProfesional.controls;let g = index" class="row">
+        <div class="p-field p-col-12 p-md-4 col-md-8">
+          <span class="p-float-label">
+            <input type="text" id="inputtext" pInputText formControlName="HabilidadTecnica"/>
+            <label for="inputtext">Idioma {{g+1}}</label>
+          </span>
+        </div>
+        <div class="p-field p-col-12 p-md-4 col-md-4">
+        <span class="p-float-label">
+        <input class="form-control" list="browsers" name="browser" id="browser" formControlName="detalleFuente">
+        <label for="cascadeSelect">Nivel Conocimiento</label>
+        <datalist id="browsers">
+          <option value="Edge">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option *ngFor="let DataForm">{{DataForm.nivelConocimiento.IdNivelConocimiento}}</option>
+        </datalist>
+        </span>
+        </div>
+        </div>
+    </ng-container>
+    <div class="container ">
+      <button type="button" class="botonfinal btn btn-primary ">Vista Previa</button>
+      <button type="submit" id="guardar" class=" botonfinal btn btn-secondary ">Guardar</button>
+    </div>
+  </form>
+</div>

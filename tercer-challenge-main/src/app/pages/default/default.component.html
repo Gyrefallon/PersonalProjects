@@ -1,0 +1,16 @@
+<app-topbar></app-topbar>
+<div class="wrapper" [ngClass]="{'sidebar-inactive-l': menuInactiveDesktop,  'sidebar-active-m':menuActiveMobile}">
+
+
+    <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+    <p-toast></p-toast>
+    <app-sidebar></app-sidebar>
+    <div class="main">
+        <div class="d-flex">
+            
+            <div class="col">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
