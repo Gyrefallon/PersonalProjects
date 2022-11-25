@@ -1,0 +1,16 @@
+{
+  "Title1":"Login User Bootcamp SkillYourUp",
+
+  "Username" :"Email",
+  "Userpassword" :"Password",
+  "language" : "Languages",
+  "hello" : "Hello dears",
+  "Code" : "The JWT code is as follows:",
+
+  "Error 1":"Email address is required",
+  "Error 2":"Password is required",
+
+  "Login":"Login",
+  "Reset":"Reset"
+
+  }

@@ -1,0 +1,16 @@
+{
+  "Title1":"Digite usuário Bootcamp SkillYourUp",
+
+  "Username" :"Correio eletrônico",
+  "Userpassword" :"Senha",
+  "language" : "línguas",
+  "hello" : "Olá queridos",
+  "Code" : "O código JWT é o seguinte:",
+
+  "Error 1":"Correio eletrônico é obrigatório",
+  "Error 2":"Senha é obrigatório",
+
+  "Login":"Conecte-se",
+  "Reset":"Redefinir"
+}
+

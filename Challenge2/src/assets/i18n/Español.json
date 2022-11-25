@@ -1,0 +1,18 @@
+{
+  "Title1":"Ingresar Usuario Bootcamp SkillYourUp",
+
+  "Username" :"Correo electronico",
+  "Userpassword" :"Contraseña",
+  "language" : "idioma",
+  "hello" : "Hola estimado",
+  "Code" : "El codigo JWT es el siguiente:",
+
+
+  "Error 1":"Correo es requerido",
+  "Error 2":"Contraseña es requerida",
+
+
+  "Login":"Acceder",
+  "Reset":"Reiniciar"
+
+}
