@@ -162,11 +162,12 @@ def accion3():
 
 def login_request():
     termino=False
-    error=0
+    error=3
     Uri='https://codigo-alfa.cl/Api/setLogin'
     while termino==False:
 
         print("Hola, se requiere el rut del usuario y la password(1234)")
+        print(f"Tiene {error} intentos")
         Rut=input("Ingrese su Rut (Sin DV): ")
         rut.append(Rut)
         passw=hash(input("Ingrese su password: "))
@@ -183,14 +184,14 @@ def login_request():
             menu_view()
             termino=True
 
-        if error>=3:
+        if error==0:
             print("Usted ha excedido intentos fallidos")
             input()
             break
 
         if paramfiltro!=200:
             print("Error")
-            error=error+1
+            error=error-1
             input()
 
 
