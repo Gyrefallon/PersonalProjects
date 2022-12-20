@@ -165,34 +165,31 @@ def login_request():
     error=3
     Uri='https://codigo-alfa.cl/Api/setLogin'
     while termino==False:
-
-        print("Hola, se requiere el rut del usuario y la password(1234)")
-        print(f"Tiene {error} intentos")
-        Rut=input("Ingrese su Rut (Sin DV): ")
-        rut.append(Rut)
-        passw=hash(input("Ingrese su password: "))
-        dataSend={'Rut':Rut,'Pass':passw}
-        datos = requests.api.post(Uri, data=dataSend)
-
-        param=datos.json()
-        paramfiltro=param['status']
-
-        if paramfiltro==200:
-            datoi=datos.json()
-            datafiltro=datoi['hash']
-            hashi.append(datafiltro)
-            menu_view()
-            termino=True
-
+        
         if error==0:
             print("Usted ha excedido intentos fallidos")
             input()
             break
-
-        if paramfiltro!=200:
-            print("Error")
-            error=error-1
-            input()
+        if error>0:
+            print("Hola, se requiere el rut del usuario y la password(1234)")
+            print(f"Tiene {error} intentos")
+            Rut=input("Ingrese su Rut (Sin DV): ")
+            rut.append(Rut)
+            passw=hash(input("Ingrese su password: "))
+            dataSend={'Rut':Rut,'Pass':passw}
+            datos = requests.api.post(Uri, data=dataSend)
+            param=datos.json()
+            paramfiltro=param['status']
+            if paramfiltro==200:
+                datoi=datos.json()
+                datafiltro=datoi['hash']
+                hashi.append(datafiltro)
+                menu_view()
+                termino=True
+            if paramfiltro!=200:
+                print("Error")
+                error=error-1
+                input()
 
 
 
